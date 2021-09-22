@@ -1,0 +1,35 @@
+{
+    "schemaVersion": 1,
+    "id": "silence",
+    "version": "${version}",
+    "environment": "client",
+    "entrypoints": {
+        "client": [ "de.giselbaer.mcmod.silence.Silence" ],
+        "modmenu": [ "de.giselbaer.mcmod.silence.MMConfigurationHandler" ]
+    },
+    "custom": {
+        "modupdater": {
+            "strategy": "json",
+            "url": "https://raw.githubusercontent.com/gbl/ModVersionInfo/master/Silence.json"
+        }
+    },
+    "mixins": [
+      	"mixins.silence.json"
+    ],
+    "depends": {
+      "fabric": "*"
+    },
+    "recommends": {
+      "modmenu" : "*",
+      "modupdater": ">=1.1.7"        
+    },
+    "name": "Silence",
+    "description": "Mutes MC on a key press, and restores the sound after pressing the key again",
+    "icon": "icon.png",
+    "authors": [ "Giselbaer" ],
+    "contact": {
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/silence",
+        "sources": "https://github.com/gbl/Silence",
+        "issues": "https://github.com/gbl/Silence/issues"
+    }
+}

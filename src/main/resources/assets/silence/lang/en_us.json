@@ -1,0 +1,10 @@
+{
+    "key.categories.silence": "Silence!",
+    "key.silence.toggle": "Sound on/off",
+    
+    "silence.config.trackfocus": "Track Focus",
+    "silence.config.tt.trackfocus": "Automatically turn sound off when MC is in the background",
+    
+    "silence.soundoff": "Sound is off",
+    "silence.soundon": "Sound set to %d%%"
+}
