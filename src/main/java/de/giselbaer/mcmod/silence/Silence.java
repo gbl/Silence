@@ -16,6 +16,7 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Identifier;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_F12;
 
 /**
@@ -31,10 +32,13 @@ public class Silence implements ClientModInitializer {
     float originalVolume = 1.0f;
     float volumeOnFocusLost = 1.0f;
     private static ConfigurationHandler confHandler;
+    private static boolean silencedByMe = false;
 
+    public static Identifier SPEAKER_TEXTURE;
 
     @Override
     public void onInitializeClient() {
+        SPEAKER_TEXTURE = new Identifier(Silence.MODID, "textures/texture.png");
         instance = this;
         confHandler=ConfigurationHandler.getInstance();
         ConfigurationProvider.register(MODNAME, confHandler);
@@ -85,6 +89,7 @@ public class Silence implements ClientModInitializer {
         GameOptions options = MinecraftClient.getInstance().options;
         options.setSoundVolume(SoundCategory.MASTER, 0.0f);
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
+        silencedByMe = true;
         if (player != null) {
             player.sendMessage(new TranslatableText("silence.soundoff"), true);
         }
@@ -94,8 +99,11 @@ public class Silence implements ClientModInitializer {
         GameOptions options = MinecraftClient.getInstance().options;
         options.setSoundVolume(SoundCategory.MASTER, previous);
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
+        silencedByMe = false;
         if (player != null) {
             player.sendMessage(new TranslatableText("silence.soundon", (int)(previous * 100)), true);            
         }
     }
+    
+    public static boolean silencedByMe() { return silencedByMe; }
 }
