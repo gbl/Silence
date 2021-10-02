@@ -8,3 +8,6 @@ the original value.
 
 Optionally, you can auto-silence Minecraft when it loses focus, and restore the sound
 when Minecraft regains focus.
+
+Also optionally, the mod can show a silence icon when it's active. The position
+and presence of that icon can be set in options.
