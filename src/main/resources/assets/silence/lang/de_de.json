@@ -1,0 +1,16 @@
+{
+    "key.categories.silence": "Silence!",
+    "key.silence.toggle": "Ton on/off",
+    
+    "silence.config.trackfocus": "Focus beachten",
+    "silence.config.xPercent": "Icon X Position",
+    "silence.config.yPercent": "Icon Y Position",
+    "silence.config.wantIcon": "Icon zeigen",
+    "silence.config.tt.trackfocus": "Ton automatisch ausschalten wenn MC im Hintergrund läuft",
+    "silence.config.tt.xPercent": "Icon wo anzeigen (links nach rechts)",
+    "silence.config.tt.yPercent": "Icon wo anzeigen (oben nach unten)",
+    "silence.config.tt.wantIcon": "Icon zeigen wenn der Ton ausgeschaltet ist",
+    
+    "silence.soundoff": "Ton ist aus",
+    "silence.soundon": "Ton ist %d%%"
+}

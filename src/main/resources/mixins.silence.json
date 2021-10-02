@@ -4,6 +4,7 @@
     "refmap": "silence-refmap.json",
     "minVersion": "0.6",
     "client": [
+        "SilenceGuiMixin"
     ],
     "injectors": {
         "defaultRequire": 1

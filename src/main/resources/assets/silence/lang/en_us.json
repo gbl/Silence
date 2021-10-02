@@ -3,7 +3,13 @@
     "key.silence.toggle": "Sound on/off",
     
     "silence.config.trackfocus": "Track Focus",
+    "silence.config.xPercent": "Icon X Percent",
+    "silence.config.yPercent": "Icon Y Percent",
+    "silence.config.wantIcon": "Show Icon",
     "silence.config.tt.trackfocus": "Automatically turn sound off when MC is in the background",
+    "silence.config.tt.xPercent": "Where should the icon be shown (left to right)",
+    "silence.config.tt.yPercent": "Where should the icon be shown (top to bottom)",
+    "silence.config.tt.wantIcon": "Show an icon when silence is active",
     
     "silence.soundoff": "Sound is off",
     "silence.soundon": "Sound set to %d%%"
