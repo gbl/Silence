@@ -1,0 +1,16 @@
+{
+    "key.categories.silence": "Silence!",
+    "key.silence.toggle": "Включить/отключить звук",
+    
+    "silence.config.trackfocus": "Отслеживать окно",
+    "silence.config.xPercent": "Позиция значка по X",
+    "silence.config.yPercent": "Позиция значка по Y",
+    "silence.config.wantIcon": "Отображать значок",
+    "silence.config.tt.trackfocus": "Автоматически отключать звук при переходе игры в фоновый режим",
+    "silence.config.tt.xPercent": "Место отображения значка (слева направо)",
+    "silence.config.tt.yPercent": "Место отображения значка (сверху вниз)",
+    "silence.config.tt.wantIcon": "Показывать значок, когда Silence активен",
+    
+    "silence.soundoff": "Звук отключён",
+    "silence.soundon": "Звук установлен на %d%%"
+}
