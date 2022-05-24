@@ -15,7 +15,7 @@ import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_F12;
 
@@ -91,7 +91,7 @@ public class Silence implements ClientModInitializer {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         silencedByMe = true;
         if (player != null) {
-            player.sendMessage(new TranslatableText("silence.soundoff"), true);
+            player.sendMessage(Text.translatable("silence.soundoff"), true);
         }
     }
     
@@ -101,7 +101,7 @@ public class Silence implements ClientModInitializer {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         silencedByMe = false;
         if (player != null) {
-            player.sendMessage(new TranslatableText("silence.soundon", (int)(previous * 100)), true);            
+            player.sendMessage(Text.translatable("silence.soundon", (int)(previous * 100)), true);            
         }
     }
     
