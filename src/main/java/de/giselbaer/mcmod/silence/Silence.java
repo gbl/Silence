@@ -87,7 +87,7 @@ public class Silence implements ClientModInitializer {
     
     private void setZero() {
         GameOptions options = MinecraftClient.getInstance().options;
-        options.setSoundVolume(SoundCategory.MASTER, 0.0f);
+        options.getSoundVolumeOption(SoundCategory.MASTER).setValue(0.0);
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         silencedByMe = true;
         if (player != null) {
@@ -97,7 +97,7 @@ public class Silence implements ClientModInitializer {
     
     private void restore(float previous) {
         GameOptions options = MinecraftClient.getInstance().options;
-        options.setSoundVolume(SoundCategory.MASTER, previous);
+        options.getSoundVolumeOption(SoundCategory.MASTER).setValue((double)previous);
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         silencedByMe = false;
         if (player != null) {
