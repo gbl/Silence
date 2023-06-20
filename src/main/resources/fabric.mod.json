@@ -5,7 +5,7 @@
     "environment": "client",
     "entrypoints": {
         "client": [ "de.giselbaer.mcmod.silence.Silence" ],
-        "modmenu": [ "de.giselbaer.mcmod.silence.MMConfigurationHandler" ]
+        "not-modmenu": [ "de.giselbaer.mcmod.silence.MMConfigurationHandler" ]
     },
     "custom": {
         "modupdater": {

@@ -1,3 +1,7 @@
+/*
+
+ */
+
 package de.giselbaer.mcmod.silence;
 
 import de.guntram.mcmod.fabrictools.ConfigChangedEvent;

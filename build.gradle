@@ -11,7 +11,7 @@ buildscript {
 }
 
 plugins {
-	id 'fabric-loom' version '0.12-+'
+	id 'fabric-loom' version '1.2-SNAPSHOT'
 	id "com.modrinth.minotaur" version "2.+"
 	id "com.matthewprenger.cursegradle" version "1.4.0"
 }
@@ -20,6 +20,9 @@ apply plugin: 'de.guntram.mcmod.crowdin-translate'
 crowdintranslate.crowdinProjectName = 'silence'
 
 repositories {
+	maven {
+		url = "file://tmp/mymavenrepo/"
+	}
 	maven {
 		url = "https://maven.fabricmc.net/"
 	}
@@ -35,7 +38,7 @@ sourceCompatibility = 17
 targetCompatibility = 17
 
 ext.Versions = new Properties()
-Versions.load(file("Versionfiles/mcversion-1.19.3.properties").newReader())
+Versions.load(file("Versionfiles/mcversion-1.20.properties").newReader())
 
 archivesBaseName = "silence"
 ext.projectVersion = "1.0.1"
@@ -55,13 +58,6 @@ processResources {
 }
 
 dependencies {
-    
-    // This sucks, but the spigot server part needs Craft... classes which
-    // aren't in spigots maven, so if you want to compile the mod, you need
-    // to get a spigot.jar first. Sorry.
-
-    compileOnly files('/home/gbl/SoftwareProjects/MyProjects/MinecraftPlugins/libraries/spigot-1.17.jar')
-
     minecraft  "com.mojang:minecraft:${Versions['minecraft_version']}"
     mappings   "net.fabricmc:yarn:${Versions['yarn_mappings']}:v2"
     modImplementation "net.fabricmc:fabric-loader:${Versions['loader_version']}"
@@ -73,12 +69,8 @@ dependencies {
     include    "de.guntram.mcmod:GBfabrictools:${Versions['gbfabrictools_version']}"
 }
 
-// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-// if it is present.
-// If you remove this task, sources will not be generated.
-task sourcesJar(type: Jar, dependsOn: classes) {
-	classifier = 'sources'
-	from sourceSets.main.allSource
+java {
+    withSourcesJar()
 }
 
 build {
