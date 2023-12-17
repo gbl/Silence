@@ -29,7 +29,6 @@ public class Silence implements ClientModInitializer {
     private static Silence instance;    
     private KeyBinding muteKey;
     private boolean focused;
-    float originalVolume = 1.0f;
     float volumeOnFocusLost = 1.0f;
     private static ConfigurationHandler confHandler;
     private static boolean silencedByMe = false;
@@ -60,10 +59,10 @@ public class Silence implements ClientModInitializer {
             GameOptions options = MinecraftClient.getInstance().options;
             float current = options.getSoundVolume(SoundCategory.MASTER);
             if (current > 0) {
-                originalVolume = options.getSoundVolume(SoundCategory.MASTER);
+                ConfigurationHandler.setVolume(current);
                 setZero();
             } else {
-                restore(originalVolume);
+                restore(ConfigurationHandler.getVolume());
             }
             options.write();
         }

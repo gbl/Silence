@@ -17,7 +17,7 @@
       	"mixins.silence.json"
     ],
     "depends": {
-      "fabric": "*"
+      "fabric-api": "*"
     },
     "recommends": {
       "modmenu" : "*"

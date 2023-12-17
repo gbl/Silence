@@ -15,9 +15,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(InGameHud.class)
 public abstract class SilenceGuiMixin {
     @Inject(method="render", at=@At(
-            value="FIELD", 
-            target="Lnet/minecraft/client/option/GameOptions;debugEnabled:Z", 
-            opcode = Opcodes.GETFIELD, args = {"log=false"}))
+            value="INVOKE",
+            target="Lnet/minecraft/client/gui/hud/DebugHud;shouldShowDebugHud()Z"))
     
     private void beforeRenderDebugScreen(DrawContext context, float f, CallbackInfo ci) {
         MinecraftClient client = MinecraftClient.getInstance();
